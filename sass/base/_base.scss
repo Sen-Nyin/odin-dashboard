@@ -98,6 +98,7 @@ body {
     &:hover {
       transform: translateY(0.2rem);
       fill: var(--clr-red);
+      cursor: pointer;
     }
   }
   &__card {
@@ -107,6 +108,7 @@ body {
     &:hover {
       transform: translateY(0.2rem);
       fill: var(--clr-red);
+      cursor: pointer;
     }
   }
 }

@@ -60,8 +60,13 @@
     &-profile-img {
       border-radius: 100rem;
       width: 5rem;
+
       @include a.breakpoint(xl, max) {
         width: 2rem;
+      }
+
+      &:hover {
+        cursor: pointer;
       }
     }
   }

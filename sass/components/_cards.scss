@@ -22,6 +22,7 @@
     &:hover {
       transform: scale(1.007);
       border-left: 1rem solid var(--clr-red);
+      cursor: pointer;
     }
   }
 
@@ -29,6 +30,9 @@
     gap: 2rem;
     & > :not(:last-child) {
       border-bottom: 1px solid var(--clr-light-grey);
+    }
+    & > :hover {
+      cursor: pointer;
     }
   }
   &__trending {
@@ -60,5 +64,6 @@
   }
   &:hover {
     background: var(--clr-yellow);
+    cursor: pointer;
   }
 }
