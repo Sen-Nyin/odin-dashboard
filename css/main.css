@@ -433,6 +433,7 @@ body {
 .card__project {
   border-left: 1rem solid var(--clr-yellow);
   transition: 0.25s ease;
+  gap: 1.5rem;
 }
 .card__project:hover {
   transform: scale(1.007);
