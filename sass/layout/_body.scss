@@ -9,15 +9,26 @@
   padding: 3rem;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(2, max-content);
+  grid-template-areas: 'searchbar usernav' 'greeting actions';
   gap: 3rem;
   background: white;
   border-radius: 0 1rem 0 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
+  @include a.breakpoint(lg, max) {
+    grid-template-areas: 'searchbar usernav' 'greeting greeting' 'actions actions';
+  }
+  @include a.breakpoint(960, max) {
+    grid-template-areas: 'usernav usernav' 'searchbar searchbar' 'greeting greeting' 'actions actions';
+    gap: 1.5rem;
+  }
+
   &__searchbar {
+    grid-area: searchbar;
     border: 1px solid var(--clr-green);
 
     display: flex;
+    flex-shrink: 1;
     gap: 0.5rem;
     background: white;
     padding: 0.5rem;
@@ -32,28 +43,50 @@
   }
 
   &__user-nav {
+    grid-area: usernav;
     display: flex;
     justify-content: end;
     align-items: center;
     gap: 3rem;
 
+    @include a.breakpoint(xl, max) {
+      gap: 1.5rem;
+      flex-shrink: 0;
+    }
+    @include a.breakpoint(lg, max) {
+      justify-content: center;
+    }
+
     &-profile-img {
       border-radius: 100rem;
       width: 5rem;
+      @include a.breakpoint(xl, max) {
+        width: 2rem;
+      }
     }
   }
 
   &__greeting {
+    grid-area: greeting;
     display: grid;
     grid-template-areas: 'pfp greet' 'pfp name';
     column-gap: 2rem;
     justify-content: start;
     align-items: center;
     font-weight: var(--fnt-wt-700);
+    @include a.breakpoint(lg, max) {
+      justify-content: center;
+    }
+    @include a.breakpoint(960, max) {
+      grid-template-areas: 'pfp greet name';
+    }
     &-profile-img {
       grid-area: pfp;
       border-radius: 100rem;
       width: 8rem;
+      @include a.breakpoint(960, max) {
+        width: 4rem;
+      }
     }
     &-text {
       grid-area: greet;
@@ -61,14 +94,23 @@
     &-username {
       grid-area: name;
       font-size: var(--fnt-sz-greet-name);
+
+      @include a.breakpoint(xl, max) {
+        font-size: var(--fnt-sz-default);
+      }
     }
   }
 
   &__actions {
+    grid-area: actions;
     display: flex;
     justify-content: end;
     align-items: center;
     gap: 2rem;
+
+    @include a.breakpoint(lg, max) {
+      justify-content: center;
+    }
   }
 }
 
@@ -113,6 +155,12 @@
   gap: 3rem;
   grid-template-columns: 2.2fr 0.8fr;
   grid-template-areas: 'projects aside';
+
+  @include a.breakpoint(xl, max) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, max-content);
+    grid-template-areas: 'projects' 'aside';
+  }
 }
 
 .projects {
@@ -122,6 +170,11 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: 'title title';
   gap: 2rem;
+
+  @include a.breakpoint(960, max) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'title';
+  }
 
   &__title {
     grid-area: title;

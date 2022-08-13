@@ -201,14 +201,28 @@ body {
   padding: 3rem;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(2, max-content);
+  grid-template-areas: "searchbar usernav" "greeting actions";
   gap: 3rem;
   background: white;
   border-radius: 0 1rem 0 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
+@media only screen and (max-width: 63.9875em) {
+  .header {
+    grid-template-areas: "searchbar usernav" "greeting greeting" "actions actions";
+  }
+}
+@media only screen and (max-width: 60em) {
+  .header {
+    grid-template-areas: "usernav usernav" "searchbar searchbar" "greeting greeting" "actions actions";
+    gap: 1.5rem;
+  }
+}
 .header__searchbar {
+  grid-area: searchbar;
   border: 1px solid var(--clr-green);
   display: flex;
+  flex-shrink: 1;
   gap: 0.5rem;
   background: white;
   padding: 0.5rem;
@@ -221,16 +235,34 @@ body {
   width: 100%;
 }
 .header__user-nav {
+  grid-area: usernav;
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 3rem;
 }
+@media only screen and (max-width: 74.9875em) {
+  .header__user-nav {
+    gap: 1.5rem;
+    flex-shrink: 0;
+  }
+}
+@media only screen and (max-width: 63.9875em) {
+  .header__user-nav {
+    justify-content: center;
+  }
+}
 .header__user-nav-profile-img {
   border-radius: 100rem;
   width: 5rem;
 }
+@media only screen and (max-width: 74.9875em) {
+  .header__user-nav-profile-img {
+    width: 2rem;
+  }
+}
 .header__greeting {
+  grid-area: greeting;
   display: grid;
   grid-template-areas: "pfp greet" "pfp name";
   column-gap: 2rem;
@@ -238,10 +270,25 @@ body {
   align-items: center;
   font-weight: var(--fnt-wt-700);
 }
+@media only screen and (max-width: 63.9875em) {
+  .header__greeting {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 60em) {
+  .header__greeting {
+    grid-template-areas: "pfp greet name";
+  }
+}
 .header__greeting-profile-img {
   grid-area: pfp;
   border-radius: 100rem;
   width: 8rem;
+}
+@media only screen and (max-width: 60em) {
+  .header__greeting-profile-img {
+    width: 4rem;
+  }
 }
 .header__greeting-text {
   grid-area: greet;
@@ -250,11 +297,22 @@ body {
   grid-area: name;
   font-size: var(--fnt-sz-greet-name);
 }
+@media only screen and (max-width: 74.9875em) {
+  .header__greeting-username {
+    font-size: var(--fnt-sz-default);
+  }
+}
 .header__actions {
+  grid-area: actions;
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 2rem;
+}
+@media only screen and (max-width: 63.9875em) {
+  .header__actions {
+    justify-content: center;
+  }
 }
 
 .sidebar {
@@ -294,6 +352,13 @@ body {
   grid-template-columns: 2.2fr 0.8fr;
   grid-template-areas: "projects aside";
 }
+@media only screen and (max-width: 74.9875em) {
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, max-content);
+    grid-template-areas: "projects" "aside";
+  }
+}
 
 .projects {
   grid-area: projects;
@@ -302,6 +367,12 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "title title";
   gap: 2rem;
+}
+@media only screen and (max-width: 60em) {
+  .projects {
+    grid-template-columns: 1fr;
+    grid-template-areas: "title";
+  }
 }
 .projects__title {
   grid-area: title;
@@ -315,6 +386,7 @@ body {
 }
 
 .btn__actions {
+  font-size: var(--fnt-sz-default);
   text-transform: uppercase;
   color: var(--clr-offwhite);
   background: var(--clr-blue);
@@ -322,6 +394,12 @@ body {
   border-radius: 1rem;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   transition: 0.25s ease;
+}
+@media only screen and (max-width: 74.9875em) {
+  .btn__actions {
+    font-size: 1.4rem;
+    padding: 0.5rem 1.5rem;
+  }
 }
 .btn__actions:hover {
   transform: translateY(-0.3rem);

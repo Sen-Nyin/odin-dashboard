@@ -1,5 +1,8 @@
+@use '../abstracts/' as a;
+
 .btn {
   &__actions {
+    font-size: var(--fnt-sz-default);
     text-transform: uppercase;
     color: var(--clr-offwhite);
     background: var(--clr-blue);
@@ -7,6 +10,11 @@
     border-radius: 1rem;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     transition: 0.25s ease;
+
+    @include a.breakpoint(xl, max) {
+      font-size: 1.4rem;
+      padding: 0.5rem 1.5rem;
+    }
 
     &:hover {
       transform: translateY(-0.3rem);
