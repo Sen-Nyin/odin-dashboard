@@ -67,16 +67,19 @@ meter {
 }
 
 :root {
-  --root-background: #666;
-  --body-background: var(--clr-offwhite);
-  --sidebar-nav: var(--clr-offwhite);
+  --root-background: var(--clr-green);
+  --body-background: var(--clr-creamywhite);
+  --sidebar-nav: var(--clr-creamywhite);
   --sidebar-nav-hover: var(--clr-green);
-  --header-main: var(--clr-offwhite);
+  --header-main: var(--clr-creamywhite);
   --clr-yellow: #ffd166;
-  --clr-offwhite: #fef9ef;
+  --clr-creamywhite: #fef9ef;
   --clr-green: #17c3b2;
   --clr-blue: #227c9d;
   --clr-red: #fe6d73;
+  --clr-offwhite: #fefcfb;
+  --clr-light-grey: #eeeeee;
+  --clr-twitter: #1da1f2;
   --fnt-fam-default: "Ubuntu", sans-serif;
   --fnt-wt-300: 300;
   --fnt-wt-400: 400;
@@ -84,6 +87,7 @@ meter {
   --fnt-sz-default: 1.6rem;
   --fnt-sz-header-main: 2.5rem;
   --fnt-sz-sidebar: 1.8rem;
+  --fnt-sz-greet-name: 2.5rem;
   font-size: 62.5%;
 }
 
@@ -106,6 +110,7 @@ body {
   grid-template-areas: "sidebar header" "sidebar main";
   font-family: var(--fnt-fam-default);
   font-size: var(--fnt-sz-default);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .icon {
@@ -128,6 +133,10 @@ body {
   width: 2rem;
   aspect-ratio: 1;
 }
+.icon__usernav {
+  width: 2.5rem;
+  aspect-ratio: 1;
+}
 
 .heading--main {
   display: flex;
@@ -137,13 +146,74 @@ body {
   color: var(--header-main);
 }
 
+.link-twitter {
+  color: var(--clr-twitter);
+}
+.link-twitter:hover {
+  text-decoration: underline;
+}
+
 .header {
   grid-area: header;
   width: 100%;
   display: grid;
   padding: 3rem;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(2, max-content);
+  gap: 3rem;
+  background: white;
+  border-radius: 0 1rem 0 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.header__searchbar {
+  border: 1px solid var(--clr-green);
+  display: flex;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 10rem;
+  width: 100%;
+  height: 3rem;
+  margin-block: auto;
+}
+.header__searchbar-input {
+  width: 100%;
+}
+.header__user-nav {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 3rem;
+}
+.header__user-nav-profile-img {
+  border-radius: 100rem;
+  width: 5rem;
+}
+.header__greeting {
+  display: grid;
+  grid-template-areas: "pfp greet" "pfp name";
+  column-gap: 2rem;
+  justify-content: start;
+  align-items: center;
+  font-weight: var(--fnt-wt-700);
+}
+.header__greeting-profile-img {
+  grid-area: pfp;
+  border-radius: 100rem;
+  width: 8rem;
+}
+.header__greeting-text {
+  grid-area: greet;
+}
+.header__greeting-username {
+  grid-area: name;
+  font-size: var(--fnt-sz-greet-name);
+}
+.header__actions {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 2rem;
 }
 
 .sidebar {
@@ -154,6 +224,7 @@ body {
   display: grid;
   gap: 5rem;
   align-content: start;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .sidebar__nav {
   display: grid;
@@ -173,12 +244,19 @@ body {
   color: var(--sidebar-nav-hover);
 }
 
-.searchbar {
-  border: 1px solid var(--clr-green);
-  display: flex;
-  gap: 0.5rem;
-  background: white;
-  padding: 0.5rem;
+.btn__actions {
+  text-transform: uppercase;
+  color: var(--clr-offwhite);
+  background: var(--clr-green);
+  padding: 1rem 3rem;
   border-radius: 10rem;
-  width: 100%;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  transition: 0.25s ease;
+}
+.btn__actions:hover {
+  transform: translateY(-0.3rem);
+}
+.btn__actions:hover:active {
+  transform: translateY(0.5rem);
+  box-shadow: rgb(38, 57, 77) 0px 10px 15px -10px;
 }/*# sourceMappingURL=main.css.map */

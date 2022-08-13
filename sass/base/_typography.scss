@@ -7,3 +7,12 @@
   font-size: var(--fnt-sz-header-main);
   color: var(--header-main);
 }
+
+.link {
+  &-twitter {
+    color: var(--clr-twitter);
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

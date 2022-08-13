@@ -1,27 +1,34 @@
 :root {
   // colors
 
-  --root-background: #666;
-  --body-background: var(--clr-offwhite);
-  --sidebar-nav: var(--clr-offwhite);
+  --root-background: var(--clr-green);
+  --body-background: var(--clr-creamywhite);
+  --sidebar-nav: var(--clr-creamywhite);
   --sidebar-nav-hover: var(--clr-green);
-  --header-main: var(--clr-offwhite);
+  --header-main: var(--clr-creamywhite);
 
   --clr-yellow: #ffd166;
-  --clr-offwhite: #fef9ef;
+  --clr-creamywhite: #fef9ef;
   --clr-green: #17c3b2;
   --clr-blue: #227c9d;
   --clr-red: #fe6d73;
+  --clr-offwhite: #fefcfb;
+  --clr-light-grey: #eeeeee;
+
+  --clr-twitter: #1da1f2;
 
   // fonts
 
   --fnt-fam-default: 'Ubuntu', sans-serif;
+
   --fnt-wt-300: 300;
   --fnt-wt-400: 400;
   --fnt-wt-700: 700;
+
   --fnt-sz-default: 1.6rem;
   --fnt-sz-header-main: 2.5rem;
   --fnt-sz-sidebar: 1.8rem;
+  --fnt-sz-greet-name: 2.5rem;
 
   // sizings
 
@@ -46,6 +53,7 @@ body {
   grid-template-areas: 'sidebar header' 'sidebar main';
   font-family: var(--fnt-fam-default);
   font-size: var(--fnt-sz-default);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   //   padding: 2rem;
 }
@@ -68,6 +76,10 @@ body {
   }
   &__searchbar {
     width: 2rem;
+    aspect-ratio: 1;
+  }
+  &__usernav {
+    width: 2.5rem;
     aspect-ratio: 1;
   }
 }

@@ -8,7 +8,48 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <title>Odin - Dashboard</title>
   </head>
+  <body>
+    <!-- HEADER -->
 
+    <header class="header">
+      <div class="header__searchbar">
+        <svg class="icon__searchbar">
+          <use xlink:href="icons/sprite.svg#icon-search"></use>
+        </svg>
+        <input class="header__searchbar-input" type="text" />
+      </div>
+      <nav class="header__user-nav">
+        <svg class="icon__usernav">
+          <use xlink:href="icons/sprite.svg#icon-notifications_on"></use>
+        </svg>
+        <img
+          src="images/img-leon-pfp.png"
+          alt="profile picture"
+          class="header__user-nav-profile-img"
+        />
+        <span class="header__user-nav-username">Leon Lonsdale</span>
+      </nav>
+      <div class="header__greeting">
+        <img
+          src="images/img-leon-pfp.png"
+          alt="profile picture"
+          class="header__greeting-profile-img"
+        />
+        <span class="header__greeting-text">Hello,</span>
+        <span class="header__greeting-username"
+          >Leon Lonsdale (<a
+            href="https://www.twitter.com/LeonLonsdale"
+            class="link-twitter"
+            >@LeonLonsdale</a
+          >)</span
+        >
+      </div>
+      <nav class="header__actions">
+        <a href="#" class="btn__actions">New</a>
+        <a href="#" class="btn__actions">Upload</a>
+        <a href="#" class="btn__actions">Share</a>
+      </nav>
+    </header>
 
     <!-- SIDE BAR -->
     <nav class="sidebar">

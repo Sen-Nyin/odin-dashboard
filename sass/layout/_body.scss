@@ -7,8 +7,69 @@
   width: 100%;
   display: grid;
   padding: 3rem;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(2, max-content);
+  gap: 3rem;
+  background: white;
+  border-radius: 0 1rem 0 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+  &__searchbar {
+    border: 1px solid var(--clr-green);
+
+    display: flex;
+    gap: 0.5rem;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 10rem;
+    width: 100%;
+    height: 3rem;
+    margin-block: auto;
+
+    &-input {
+      width: 100%;
+    }
+  }
+
+  &__user-nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 3rem;
+
+    &-profile-img {
+      border-radius: 100rem;
+      width: 5rem;
+    }
+  }
+
+  &__greeting {
+    display: grid;
+    grid-template-areas: 'pfp greet' 'pfp name';
+    column-gap: 2rem;
+    justify-content: start;
+    align-items: center;
+    font-weight: var(--fnt-wt-700);
+    &-profile-img {
+      grid-area: pfp;
+      border-radius: 100rem;
+      width: 8rem;
+    }
+    &-text {
+      grid-area: greet;
+    }
+    &-username {
+      grid-area: name;
+      font-size: var(--fnt-sz-greet-name);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
 // sidebar
@@ -21,6 +82,7 @@
   display: grid;
   gap: 5rem;
   align-content: start;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   &__nav {
     display: grid;
@@ -41,13 +103,22 @@
   }
 }
 
-.searchbar {
-  border: 1px solid var(--clr-green);
+.btn {
+  &__actions {
+    text-transform: uppercase;
+    color: var(--clr-offwhite);
+    background: var(--clr-green);
+    padding: 1rem 3rem;
+    border-radius: 10rem;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    transition: 0.25s ease;
 
-  display: flex;
-  gap: 0.5rem;
-  background: white;
-  padding: 0.5rem;
-  border-radius: 10rem;
-  width: 100%;
+    &:hover {
+      transform: translateY(-0.3rem);
+      &:active {
+        transform: translateY(0.5rem);
+        box-shadow: rgb(38, 57, 77) 0px 10px 15px -10px;
+      }
+    }
+  }
 }
