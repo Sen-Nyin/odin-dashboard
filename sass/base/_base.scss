@@ -4,8 +4,10 @@
   --root-background: var(--clr-green);
   --body-background: var(--clr-creamywhite);
   --sidebar-nav: var(--clr-creamywhite);
-  --sidebar-nav-hover: var(--clr-green);
+  --sidebar-nav-hover: var(--clr-yellow);
   --header-main: var(--clr-creamywhite);
+  --body-text: var(--clr-medium-grey);
+  --headings-text: var(--clr-dark-grey);
 
   --clr-yellow: #ffd166;
   --clr-creamywhite: #fef9ef;
@@ -14,6 +16,8 @@
   --clr-red: #fe6d73;
   --clr-offwhite: #fefcfb;
   --clr-light-grey: #eeeeee;
+  --clr-dark-grey: #383838;
+  --clr-medium-grey: #505050;
 
   --clr-twitter: #1da1f2;
 
@@ -27,13 +31,22 @@
 
   --fnt-sz-default: 1.6rem;
   --fnt-sz-header-main: 2.5rem;
+  --fnt-sz-header-secondary: 2rem;
+  --fnt-sz-header-announcement: 1.8rem;
   --fnt-sz-sidebar: 1.8rem;
   --fnt-sz-greet-name: 2.5rem;
+  --fnt-sz-announcement: 1.4rem;
 
   // sizings
 
   font-size: 62.5%;
 }
+// TODO REMOVE LATER TODO
+// * {
+//   border: 1px dashed red;
+// }
+// TODO REMOVE LATER TODO
+
 html {
   display: grid;
   place-items: center;
@@ -42,8 +55,7 @@ html {
 }
 
 body {
-  overflow: hidden;
-  height: 95vh;
+  min-height: 95vh;
   width: 95vw;
   background: var(--body-background);
   border-radius: 1rem;
@@ -54,6 +66,7 @@ body {
   font-family: var(--fnt-fam-default);
   font-size: var(--fnt-sz-default);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  color: var(--body-text);
 
   //   padding: 2rem;
 }
@@ -81,5 +94,12 @@ body {
   &__usernav {
     width: 2.5rem;
     aspect-ratio: 1;
+  }
+  &__card {
+    width: 2rem;
+    aspect-ratio: 1;
+    &:hover {
+      transform: translateY(0.2rem);
+    }
   }
 }

@@ -1,0 +1,19 @@
+.btn {
+  &__actions {
+    text-transform: uppercase;
+    color: var(--clr-offwhite);
+    background: var(--clr-green);
+    padding: 1rem 3rem;
+    border-radius: 10rem;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    transition: 0.25s ease;
+
+    &:hover {
+      transform: translateY(-0.3rem);
+      &:active {
+        transform: translateY(0.5rem);
+        box-shadow: rgb(38, 57, 77) 0px 10px 15px -10px;
+      }
+    }
+  }
+}

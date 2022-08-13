@@ -70,8 +70,10 @@ meter {
   --root-background: var(--clr-green);
   --body-background: var(--clr-creamywhite);
   --sidebar-nav: var(--clr-creamywhite);
-  --sidebar-nav-hover: var(--clr-green);
+  --sidebar-nav-hover: var(--clr-yellow);
   --header-main: var(--clr-creamywhite);
+  --body-text: var(--clr-medium-grey);
+  --headings-text: var(--clr-dark-grey);
   --clr-yellow: #ffd166;
   --clr-creamywhite: #fef9ef;
   --clr-green: #17c3b2;
@@ -79,6 +81,8 @@ meter {
   --clr-red: #fe6d73;
   --clr-offwhite: #fefcfb;
   --clr-light-grey: #eeeeee;
+  --clr-dark-grey: #383838;
+  --clr-medium-grey: #505050;
   --clr-twitter: #1da1f2;
   --fnt-fam-default: "Ubuntu", sans-serif;
   --fnt-wt-300: 300;
@@ -86,8 +90,11 @@ meter {
   --fnt-wt-700: 700;
   --fnt-sz-default: 1.6rem;
   --fnt-sz-header-main: 2.5rem;
+  --fnt-sz-header-secondary: 2rem;
+  --fnt-sz-header-announcement: 1.8rem;
   --fnt-sz-sidebar: 1.8rem;
   --fnt-sz-greet-name: 2.5rem;
+  --fnt-sz-announcement: 1.4rem;
   font-size: 62.5%;
 }
 
@@ -99,8 +106,7 @@ html {
 }
 
 body {
-  overflow: hidden;
-  height: 95vh;
+  min-height: 95vh;
   width: 95vw;
   background: var(--body-background);
   border-radius: 1rem;
@@ -111,6 +117,7 @@ body {
   font-family: var(--fnt-fam-default);
   font-size: var(--fnt-sz-default);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  color: var(--body-text);
 }
 
 .icon {
@@ -137,6 +144,13 @@ body {
   width: 2.5rem;
   aspect-ratio: 1;
 }
+.icon__card {
+  width: 2rem;
+  aspect-ratio: 1;
+}
+.icon__card:hover {
+  transform: translateY(0.2rem);
+}
 
 .heading--main {
   display: flex;
@@ -144,6 +158,26 @@ body {
   font-weight: var(--fnt-wt-700);
   font-size: var(--fnt-sz-header-main);
   color: var(--header-main);
+}
+.heading--secondary {
+  font-size: var(--fnt-sz-header-secondary);
+  font-weight: var(--fnt-wt-700);
+  color: var(--headings-text);
+}
+
+.card-header {
+  font-size: var(--fnt-sz-header-secondary);
+  font-weight: var(--fnt-wt-700);
+  color: var(--headings-text);
+}
+
+.announcement__header {
+  font-size: var(--fnt-sz-header-announcement);
+  font-weight: var(--fnt-wt-700);
+  color: var(--headings-text);
+}
+.announcement__text {
+  font-size: var(--fnt-sz-announcement);
 }
 
 .link-twitter {
@@ -242,6 +276,35 @@ body {
 }
 .sidebar__nav-link:hover {
   color: var(--sidebar-nav-hover);
+  transform: scale(1.1);
+}
+
+.main {
+  grid-area: main;
+  padding: 3rem;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 2.2fr 0.8fr;
+  grid-template-areas: "projects aside";
+}
+
+.projects {
+  grid-area: projects;
+  display: grid;
+  grid-template-rows: max-content repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "title title";
+  gap: 2rem;
+}
+.projects__title {
+  grid-area: title;
+}
+
+.aside {
+  grid-area: aside;
+  display: grid;
+  grid-template-rows: max-content 1fr max-content 1fr;
+  gap: 2rem;
 }
 
 .btn__actions {
@@ -259,4 +322,59 @@ body {
 .btn__actions:hover:active {
   transform: translateY(0.5rem);
   box-shadow: rgb(38, 57, 77) 0px 10px 15px -10px;
+}
+
+.card {
+  display: grid;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: var(--clr-offwhite);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: 0.25s ease;
+}
+.card:hover {
+  transform: scale(1.007);
+}
+.card-text {
+  line-height: 2rem;
+}
+.card-icons {
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+}
+.card__announcement {
+  gap: 2rem;
+}
+.card__announcement > :not(:last-child) {
+  border-bottom: 1px solid var(--clr-light-grey);
+}
+.card__trending {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.trending {
+  display: grid;
+  grid-template-areas: "pfp username" "pfp projtitle";
+  justify-content: start;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+.trending__profile-img {
+  grid-area: pfp;
+  width: 5rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+.trending__username {
+  grid-area: username;
+}
+.trending__project-titel {
+  grid-area: projtitle;
+}
+.trending:hover {
+  background: var(--clr-yellow);
 }/*# sourceMappingURL=main.css.map */
