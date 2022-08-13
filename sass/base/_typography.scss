@@ -1,1 +1,9 @@
- 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+.heading--main {
+  display: flex;
+  align-items: center;
+  font-weight: var(--fnt-wt-700);
+  font-size: var(--fnt-sz-header-main);
+  color: var(--header-main);
+}

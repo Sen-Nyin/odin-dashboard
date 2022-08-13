@@ -1,0 +1,73 @@
+:root {
+  // colors
+
+  --root-background: #666;
+  --body-background: var(--clr-offwhite);
+  --sidebar-nav: var(--clr-offwhite);
+  --sidebar-nav-hover: var(--clr-green);
+  --header-main: var(--clr-offwhite);
+
+  --clr-yellow: #ffd166;
+  --clr-offwhite: #fef9ef;
+  --clr-green: #17c3b2;
+  --clr-blue: #227c9d;
+  --clr-red: #fe6d73;
+
+  // fonts
+
+  --fnt-fam-default: 'Ubuntu', sans-serif;
+  --fnt-wt-300: 300;
+  --fnt-wt-400: 400;
+  --fnt-wt-700: 700;
+  --fnt-sz-default: 1.6rem;
+  --fnt-sz-header-main: 2.5rem;
+  --fnt-sz-sidebar: 1.8rem;
+
+  // sizings
+
+  font-size: 62.5%;
+}
+html {
+  display: grid;
+  place-items: center;
+  background-color: var(--root-background);
+  padding: 3rem;
+}
+
+body {
+  overflow: hidden;
+  height: 95vh;
+  width: 95vw;
+  background: var(--body-background);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: max-content 1fr;
+  grid-template-areas: 'sidebar header' 'sidebar main';
+  font-family: var(--fnt-fam-default);
+  font-size: var(--fnt-sz-default);
+
+  //   padding: 2rem;
+}
+
+.icon {
+  margin-right: 2rem;
+
+  &__heading-main {
+    padding: 0;
+    width: 4rem;
+    aspect-ratio: 1;
+    margin-right: 1rem;
+    fill: var(--header-main);
+  }
+  &__sidebar {
+    width: 3rem;
+    aspect-ratio: 1;
+    margin-right: 2rem;
+    fill: var(--sidebar-nav);
+  }
+  &__searchbar {
+    width: 2rem;
+    aspect-ratio: 1;
+  }
+}

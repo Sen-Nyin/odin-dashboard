@@ -1,1 +1,53 @@
 @use '../abstracts/' as a;
+
+// header
+
+.header {
+  grid-area: header;
+  width: 100%;
+  display: grid;
+  padding: 3rem;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(2, max-content);
+}
+
+// sidebar
+
+.sidebar {
+  grid-area: sidebar;
+  background: var(--clr-blue);
+  border-radius: 1rem 0rem 0rem 1rem;
+  padding: 3rem;
+  display: grid;
+  gap: 5rem;
+  align-content: start;
+
+  &__nav {
+    display: grid;
+    gap: 1.5rem;
+    &-item {
+      display: flex;
+      align-items: center;
+      font-size: var(--fnt-sz-sidebar);
+      font-weight: var(--fnt-wt-400);
+      color: var(--sidebar-nav);
+    }
+    &-link {
+      transition: 0.25s ease;
+      &:hover {
+        color: var(--sidebar-nav-hover);
+      }
+    }
+  }
+}
+
+.searchbar {
+  border: 1px solid var(--clr-green);
+
+  display: flex;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 10rem;
+  width: 100%;
+}
