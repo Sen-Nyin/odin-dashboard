@@ -5,11 +5,6 @@
   padding: 1.5rem;
   background: var(--clr-offwhite);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  transition: 0.25s ease;
-
-  &:hover {
-    transform: scale(1.007);
-  }
 
   &-text {
     line-height: 2rem;
@@ -19,6 +14,15 @@
     display: flex;
     justify-content: end;
     gap: 2rem;
+  }
+
+  &__project {
+    border-left: 1rem solid var(--clr-yellow);
+    transition: 0.25s ease;
+    &:hover {
+      transform: scale(1.007);
+      border-left: 1rem solid var(--clr-red);
+    }
   }
 
   &__announcement {

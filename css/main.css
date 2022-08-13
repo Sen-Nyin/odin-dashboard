@@ -143,13 +143,20 @@ body {
 .icon__usernav {
   width: 2.5rem;
   aspect-ratio: 1;
+  transition: 0.25s ease;
+}
+.icon__usernav:hover {
+  transform: translateY(0.2rem);
+  fill: var(--clr-red);
 }
 .icon__card {
   width: 2rem;
   aspect-ratio: 1;
+  transition: 0.25s ease;
 }
 .icon__card:hover {
   transform: translateY(0.2rem);
+  fill: var(--clr-red);
 }
 
 .heading--main {
@@ -310,14 +317,15 @@ body {
 .btn__actions {
   text-transform: uppercase;
   color: var(--clr-offwhite);
-  background: var(--clr-green);
+  background: var(--clr-blue);
   padding: 1rem 3rem;
-  border-radius: 10rem;
+  border-radius: 1rem;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   transition: 0.25s ease;
 }
 .btn__actions:hover {
   transform: translateY(-0.3rem);
+  background: var(--clr-red);
 }
 .btn__actions:hover:active {
   transform: translateY(0.5rem);
@@ -330,10 +338,6 @@ body {
   padding: 1.5rem;
   background: var(--clr-offwhite);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  transition: 0.25s ease;
-}
-.card:hover {
-  transform: scale(1.007);
 }
 .card-text {
   line-height: 2rem;
@@ -342,6 +346,14 @@ body {
   display: flex;
   justify-content: end;
   gap: 2rem;
+}
+.card__project {
+  border-left: 1rem solid var(--clr-yellow);
+  transition: 0.25s ease;
+}
+.card__project:hover {
+  transform: scale(1.007);
+  border-left: 1rem solid var(--clr-red);
 }
 .card__announcement {
   gap: 2rem;

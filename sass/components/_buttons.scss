@@ -2,14 +2,15 @@
   &__actions {
     text-transform: uppercase;
     color: var(--clr-offwhite);
-    background: var(--clr-green);
+    background: var(--clr-blue);
     padding: 1rem 3rem;
-    border-radius: 10rem;
+    border-radius: 1rem;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     transition: 0.25s ease;
 
     &:hover {
       transform: translateY(-0.3rem);
+      background: var(--clr-red);
       &:active {
         transform: translateY(0.5rem);
         box-shadow: rgb(38, 57, 77) 0px 10px 15px -10px;

@@ -94,12 +94,19 @@ body {
   &__usernav {
     width: 2.5rem;
     aspect-ratio: 1;
+    transition: 0.25s ease;
+    &:hover {
+      transform: translateY(0.2rem);
+      fill: var(--clr-red);
+    }
   }
   &__card {
     width: 2rem;
     aspect-ratio: 1;
+    transition: 0.25s ease;
     &:hover {
       transform: translateY(0.2rem);
+      fill: var(--clr-red);
     }
   }
 }
